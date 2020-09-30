@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+    magictunnel:
+        image: dcoppari/magictunnel
+        restart: unless-stopped
+        ports:
+            - "80:80"
+        environment:
+            - SSH_PRV_KEY
+        env_file: .env
+        networks:
+            - public
+
+networks:
+    public:
