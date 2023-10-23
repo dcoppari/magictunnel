@@ -19,8 +19,8 @@ COPY ./entrypoint.sh /
 
 RUN chmod +x /entrypoint.sh
 
-# Monitoring SSH connection
-HEALTHCHECK CMD curl --fail http://localhost:8080/ || exit 1
+# Monitoring SSH tunnel
+HEALTHCHECK CMD curl --fail http://127.0.0.1:3000/ || exit 1
 
 WORKDIR /
 
